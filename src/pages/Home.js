@@ -9,7 +9,7 @@ function Home({isAuth})
     const domain = arr[1];
     const[postLists,setPostList]=useState([])
     const postsCollectionRef = collection(db,domain);
-    useEffect(()=>{
+    useEffect(() => {
         const getPosts = async()=>
         {
             const data = await getDocs(postsCollectionRef)
@@ -20,10 +20,10 @@ function Home({isAuth})
             })));
         };
         getPosts();
-    });
+    }, []);
 
     
-    const deletePost= async (id) =>
+    const deletePost = async (id) =>
     {
         const postDoc = doc(db,domain,id)
         await deleteDoc(postDoc)
