@@ -22,13 +22,13 @@ function CreatePost({ isAuth }) {
     //console.log(title);
     //console.log(auth.currentUser.email);
     //console.log(domain)
-    //navigate('/');
+    navigate('/home');
   };
   useEffect(() => {
     if (!isAuth) {
       navigate("/login");
     }
-  });
+  },[]);
 
   return (
     <div className="createPostPage">
